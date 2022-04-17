@@ -4,19 +4,19 @@
 template<typename T, int size>
 class TPQueue {
  private:
-    T as[size] = {0};
-    int frst = 0, lst = 0;
+    T w[size] = {0};
+    int a = 0, b = 0;
  public:
   void push(T value) {
-      int i = lst;
-      while ((--i >= frst) && (value.prior > as[i % size].prior)) {
-          as[(i + 1) % size] = as[i % size];
+      int i = b;
+      while ((--i >= a) && (value.prior > w[i % size].prior)) {
+          w[(i + 1) % size] = w[i % size];
       }
-      as[(i+1) % size] = value;
-     lst ++;
+      w[(i+1) % size] = value;
+     b ++;
   }
   T pop() {
-      return as[(frst ++) % size];
+      return w[(a ++) % size];
   }
 };
 struct SYM {
