@@ -13,10 +13,10 @@ class TPQueue {
           w[(i + 1) % size] = w[i % size];
       }
       w[(i+1) % size] = value;
-     b ++;
+      b++;
   }
   T pop() {
-      return w[(a ++) % size];
+      return w[(a++) % size];
   }
 };
 struct SYM {
